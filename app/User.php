@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace PicFoto;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function materias(){
+        return $this->hasMany('PicFoto\Materia','userid','id');
+    }
 }

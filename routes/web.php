@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware'=>'cors'],function(){
+    Route::post('/login','Auth\ApiAuhtController@login');
+    Route::post('/usuarios','UserController@store');
+});
+
+
+Route::resource('/materias','MateriaController');
+
+
+
