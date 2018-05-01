@@ -23,5 +23,7 @@ Route::group(['middleware'=>'cors'],function(){
 
 Route::resource('/materias','MateriaController');
 
+Route::resource('/notas','NotaController');
+
 
 

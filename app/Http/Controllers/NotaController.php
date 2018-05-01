@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 class NotaController extends Controller
 {
     /**
+     * NotaController constructor.
+     */
+    public function __construct(){
+
+        $this->middleware('jwt.auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -33,9 +41,8 @@ class NotaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        dd($request->imagenes);
     }
 
     /**
