@@ -17,7 +17,7 @@ class ApiAuhtController extends Controller
         $token = \JWTAuth::attempt($credenciales);
 
             if($token){
-                return ['token'=>$token,'status'=>200];
+                return ['token'=>$token,'status'=>200,'user_id'=>\Auth::user()->id];
             }
         }catch (JWTException $e){
             return ["error"=>$e->getMessage(),'status'=>500];

@@ -23,7 +23,7 @@ class MateriaController extends Controller
      *
      * @return \Illuminate\Database\Eloquent\Collection|Materia[]
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $materias = Materia::where('userid','=',\Auth::user()->id)->get();

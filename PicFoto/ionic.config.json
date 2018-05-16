@@ -1,0 +1,8 @@
+{
+  "name": "PicFoto",
+  "app_id": "6463b840",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
