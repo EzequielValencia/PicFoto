@@ -25,8 +25,8 @@ class MateriaController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        $materias = Materia::where('userid','=',\Auth::user()->id)->get();
+        $user = auth()->setRequest($request)->user();
+        $materias = Materia::where('userid','=',$user->id)->get();
         foreach ($materias as $materia){
             $materia = $materia->horario->toArray();
         }
